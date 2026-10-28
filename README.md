@@ -100,3 +100,8 @@ then headless Chrome (via `puppeteer-core`) prints it to PDF with the footer.
 The preview paginates the same HTML in your browser with
 [Paged.js](https://pagedjs.org) (vendored in `vendor/`, MIT licensed). Chrome
 is the authority on exact pagination, so the preview is a close approximation.
+
+## License
+
+MIT. See [LICENSE](LICENSE). The vendored Paged.js in `vendor/` is also MIT
+licensed, under its own copyright.

@@ -2,6 +2,7 @@
   "name": "md2pdf",
   "version": "1.0.0",
   "description": "Convert markdown files into themed, branded PDFs",
+  "license": "MIT",
   "private": true,
   "engines": {
     "node": ">=22.12.0"
