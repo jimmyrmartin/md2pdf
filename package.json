@@ -1,0 +1,15 @@
+{
+  "name": "md2pdf",
+  "version": "1.0.0",
+  "description": "Convert markdown files into themed, branded PDFs",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "bin": {
+    "md2pdf": "./md2pdf.js"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.16.0"
+  }
+}

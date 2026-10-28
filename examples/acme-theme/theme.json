@@ -1,0 +1,15 @@
+{
+  "name": "Acme",
+  "logo": "logo.svg",
+  "page": { "size": "A4" },
+  "colors": {
+    "accent": "#0b7285",
+    "h2": "#5f3dc4",
+    "table-header": "#1f2933"
+  },
+  "footer": {
+    "left": "{logo}",
+    "center": "{title} · {subtitle}",
+    "right": "{page} / {pages}"
+  }
+}

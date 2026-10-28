@@ -1,0 +1,38 @@
+{
+  "name": "md2pdf",
+  "logo": null,
+  "cover": true,
+  "page": {
+    "size": "Letter",
+    "margin": {
+      "top": "16mm",
+      "right": "18mm",
+      "bottom": "20mm",
+      "left": "18mm"
+    }
+  },
+  "colors": {
+    "accent": "#2563a6",
+    "heading": "#111111",
+    "h2": "var(--accent)",
+    "ink": "#1a1a1a",
+    "muted": "#555555",
+    "link": "var(--accent)",
+    "rule": "#e2e2e2",
+    "code-bg": "#f3f3f3",
+    "code-border": "var(--accent)",
+    "table-header": "var(--accent)",
+    "table-header-text": "#ffffff",
+    "table-stripe": "#f7f9fb"
+  },
+  "fonts": {
+    "body": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "heading": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "mono": "\"SF Mono\", Menlo, Consolas, monospace"
+  },
+  "footer": {
+    "left": "{logo}",
+    "center": "{title}",
+    "right": "Page {page} of {pages}"
+  }
+}

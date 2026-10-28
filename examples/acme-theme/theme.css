@@ -1,0 +1,4 @@
+/* Optional per-theme CSS, loaded after base.css. Use it for layout changes
+   that colors and fonts in theme.json can't express. */
+h1 { text-transform: uppercase; letter-spacing: 0.5px; }
+.cover .doctitle { color: var(--accent); }

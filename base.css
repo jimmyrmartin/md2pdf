@@ -1,0 +1,73 @@
+/* md2pdf base document styling. Layout only: every color and font is a CSS
+   variable that the active theme sets (theme.json "colors" / "fonts").
+   Page size and margins come from theme.json "page", not from here. */
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  margin: 0;
+  /* Never leave fewer than 3 lines of a paragraph alone at the
+     bottom (orphans) or top (widows) of a page. */
+  orphans: 3;
+  widows: 3;
+}
+
+.cover { border-bottom: 3px solid var(--accent); padding-bottom: 14px; margin-bottom: 26px; }
+.cover img.logo { height: 30px; display: block; margin-bottom: 18px; }
+.cover .doctitle { font-size: 26pt; font-weight: 800; letter-spacing: -0.4px; margin: 0 0 6px 0; color: var(--heading); }
+.cover .docmeta { font-size: 10pt; color: var(--muted); margin: 0; }
+
+h1, h2, h3, h4 { color: var(--heading); font-family: var(--font-heading); font-weight: 800; line-height: 1.25; }
+h1 { font-size: 19pt; margin: 26px 0 10px; padding-bottom: 5px; border-bottom: 2px solid var(--accent); }
+h2 { font-size: 14.5pt; margin: 22px 0 8px; color: var(--h2); }
+h3 { font-size: 12pt; margin: 18px 0 6px; font-weight: 700; }
+h4 { font-size: 10.5pt; margin: 14px 0 4px; font-weight: 700; }
+
+p { margin: 0 0 10px; }
+a { color: var(--link); text-decoration: none; }
+strong { font-weight: 700; }
+
+ul, ol { margin: 0 0 10px; padding-left: 22px; }
+li { margin: 2px 0; break-inside: avoid; }     /* keep a list item on one page */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 9pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px;
+}
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--code-border);
+  border-radius: 4px;
+  padding: 11px 13px;
+  /* Print has no scrollbars: wrap long lines instead of clipping them, and
+     break unspaced tokens (long paths, comma lists) when nothing else fits. */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+pre code { background: none; padding: 0; font-size: 8.7pt; }
+
+table { border-collapse: collapse; width: 100%; margin: 6px 0 16px; font-size: 9.5pt; }
+th { background: var(--table-header); color: var(--table-header-text); text-align: left; font-weight: 700; padding: 6px 9px; border: 1px solid var(--table-header); }
+td { padding: 5px 9px; border: 1px solid var(--rule); vertical-align: top; }
+tr:nth-child(even) td { background: var(--table-stripe); }
+
+blockquote { margin: 0 0 12px; padding: 4px 14px; border-left: 3px solid var(--accent); color: var(--muted); }
+hr { border: none; border-top: 1px solid var(--rule); margin: 20px 0; }
+img { max-width: 100%; }
+
+h1, h2, h3, h4 { break-after: avoid; }          /* never strand a heading at page bottom */
+pre, table, img, blockquote { break-inside: avoid; }
+tr { break-inside: avoid; }                      /* don't split a table row */
+thead { display: table-header-group; }           /* repeat table header on each page */
+
+/* Forced page break. Insert `\pagebreak` (or `<!-- pagebreak -->`) on its own
+   line in the markdown to force everything after it onto a new page. */
+.page-break { break-before: page; height: 0; }
